@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "titulo": "Titulo A",
+    "quantidadePaginas": 120,
+    "disponivel": true
+  },
+  {
+    "id": 2,
+    "titulo": "Titulo D",
+    "quantidadePaginas": 820,
+    "disponivel": true
+  }
+]

@@ -1,0 +1,39 @@
+using ChapterFST1.Models;
+using ChapterFST1.Repositories;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace ChapterFST1.Controllers
+{
+    [Produces("application/json")]
+
+    [Route("api/[controller]")]
+
+    [ApiController]
+
+    public class LivroController : ControllerBase
+    {
+        private readonly LivroRepository _livroRepository;
+
+        public LivroController(LivroRepository livroRepository)
+        {
+            _livroRepository = livroRepository;
+        }
+
+        [HttpGet]
+        public IActionResult Listar()
+        {
+            try
+            {
+                return Ok(_livroRepository.Listar());
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
+    }
+}
